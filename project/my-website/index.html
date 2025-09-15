@@ -1,0 +1,201 @@
+html_code = """<!DOCTYPE html>
+
+<html lang="el">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Η σελίδα μας αναβαθμίζεται</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Redirect μετά από 5 δευτ. -->
+
+  <meta http-equiv="refresh" content="5; url=https://www.facebook.com/profile.php?id=100042584366376">
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
+    body {
+
+      margin: 0;
+
+      padding: 0;
+
+      font-family: 'Press Start 2P', cursive;
+
+      color: #fff;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      height: 100vh;
+
+      text-align: center;
+
+      overflow: hidden;
+
+      background: black;
+
+    }
+
+
+
+    /* Arcade grid animation */
+
+    body::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0; left: 0;
+
+      width: 200%; height: 200%;
+
+      background: repeating-linear-gradient(
+
+          #ff00aa 0px, #ff00aa 2px, transparent 2px, transparent 40px
+
+        ),
+
+        repeating-linear-gradient(
+
+          90deg, #00ffea 0px, #00ffea 2px, transparent 2px, transparent 40px
+
+        );
+
+      animation: moveGrid 10s linear infinite;
+
+      z-index: -1;
+
+      opacity: 0.25;
+
+    }
+
+
+
+    @keyframes moveGrid {
+
+      from { transform: translateY(0) rotate(0deg); }
+
+      to   { transform: translateY(-40px) rotate(0deg); }
+
+    }
+
+
+
+    img.logo {
+
+      max-width: 300px;
+
+      border: 4px solid #00ffea;
+
+      border-radius: 15px;
+
+      box-shadow: 0 0 20px #ff00aa;
+
+      margin-bottom: 20px;
+
+      background: #000;
+
+    }
+
+
+
+    h1 {
+
+      font-size: 20px;
+
+      margin-bottom: 15px;
+
+      text-shadow: 2px 2px #ff00aa;
+
+    }
+
+
+
+    p {
+
+      font-size: 12px;
+
+      margin-bottom: 25px;
+
+      color: #fff;
+
+    }
+
+
+
+    .button {
+
+      display: inline-block;
+
+      padding: 12px 25px;
+
+      background: #ff00aa;
+
+      color: #fff;
+
+      text-decoration: none;
+
+      border-radius: 5px;
+
+      font-size: 12px;
+
+      transition: 0.3s;
+
+    }
+
+    .button:hover {
+
+      background: #00ffea;
+
+      color: #000;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <img src="images/logo.jpeg" alt="Logo" class="logo">
+
+  <h1>Η σελίδα μας αναβαθμίζεται 🎮</h1>
+
+  <p>Σε λίγο θα μεταφερθείς αυτόματα στο Facebook!</p>
+
+  <a class="button" href="https://www.facebook.com/profile.php?id=100042584366376" target="_blank">
+
+    Αν δεν γίνει αυτόματα, πάτησε εδώ
+
+  </a>
+
+</body>
+
+</html>
+
+"""
+
+
+
+index_file = os.path.join(project_folder, 'index.html')
+
+with open(index_file, 'w', encoding='utf-8') as f:
+
+    f.write(html_code)
+
+
+
+project_folder
